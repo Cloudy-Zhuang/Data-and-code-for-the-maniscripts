@@ -1,0 +1,4 @@
+The raw data of TCGA-NSCLC cohort could be downloaded from the following website;
+Please download them and put them in the path:"TCGA-NSCLC data",before applied the R code to analyze.
+TCGA-LUAD.htseq_counts.tsv.gz：https://gdc-hub.s3.us-east-1.amazonaws.com/download/TCGA-LUAD.htseq_counts.tsv.gz
+TCGA-LUSC.htseq_counts.tsv.gz：https://gdc-hub.s3.us-east-1.amazonaws.com/download/TCGA-LUSC.htseq_counts.tsv.gz
