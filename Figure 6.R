@@ -187,50 +187,47 @@ nodes[nodes$node.short_name %in% geneSpecial$Gene,]
 
 nodes$color <- factor(nodes$color, levels = unique(nodes$color))
 
-# 有了节点和边的数据，使用 `tbl_graph()` 便可以得到一个图。
+# With node and edge data, 'tbl_graph()' produces a graph.  
 graph <- tbl_graph(nodes, edges)
 
 
 gc1 <-  ggraph(graph, layout = 'dendrogram', circular = TRUE) + 
-  #画连线
+  
   geom_edge_diagonal(aes(color = node2.color,
                          filter=node1.node.level!="all"), 
-                     alpha = 0.5, #透明度
-                     edge_width=2.5) + #连线的粗细
-  # scale_edge_color_manual(values = c("#61C3ED","red","purple","darkgreen")) + #自定义颜色
-  
-  #画点
+                     alpha = 0.5, 
+                     edge_width=2.5) + 
   geom_node_point(aes(size = node.size,
                       filter=node.level!="all"), 
                   #alpha = 1/3,
-                  color = "#61C3ED") + #统一为淡蓝色
-  scale_size(range = c(0.5,30)) + #做均一化处理，让点的大小介于range之间
-  theme(legend.position = "none") + #不画图例
+                  color = "#61C3ED") +
+  scale_size(range = c(0.5,30)) +
+  theme(legend.position = "none") + 
   
-  # 添加周围注释文字，此处是基因名gene
+  # Add the surrounding comment text, in this case they are gene  name
   geom_node_text(
     aes(
-      x = 1.05 * x, #控制字跟点的距离
-      y = 1.05 * y, #控制字跟点的距离
+      x = 1.05 * x, 
+      y = 1.05 * y, 
       label = node.short_name,
       angle = -((-node_angle(x, y) + 90) %% 180) + 90,
       filter = leaf
     ),
-    color="black", #统一为黑色字
+    color="black", 
     size = 6, hjust = 'outward') +
   
-  # 添加内环文字，此处是通路名term
+ # add inner ring text, here is the pathway name 
   geom_node_text(
     aes(label=node.short_name,
         filter = !leaf & (node.level != "all")
     ),
-    color="black", #统一为黑色字
+    color="black", 
     fontface="bold",
     size=6,
     family="sans"
   ) + 
-  theme(panel.background = element_rect(fill = NA)) + #背景透明色
-  coord_cartesian(xlim=c(-1.3,1.3),ylim = c(-1.3,1.3)) #扩大坐标系
+  theme(panel.background = element_rect(fill = NA)) + 
+  coord_cartesian(xlim=c(-1.3,1.3),ylim = c(-1.3,1.3)) 
 x11()
 gc1
 
