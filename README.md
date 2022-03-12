@@ -3,7 +3,8 @@ This repository provided the data and code of our study:**Bioinformatics and sys
 
 The category of this repository is as follows:
 
-![Category](https://user-images.githubusercontent.com/85553170/157000967-a5980f66-4b98-44e9-9e4b-c309c8afa7c1.png)
+
+![Category](https://user-images.githubusercontent.com/85553170/158000983-a6c7fdf0-9803-4e70-b7ce-7bf0b9584245.png)
 
 
 
