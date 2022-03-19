@@ -22,14 +22,7 @@ cluster_go_res <- cluster_go@result
 ##check the results based on different p value 
 cluster_go_res  %>% 
   filter(pvalue<0.05)->x
-cluster_go_res  %>% 
-  filter(p.adjust<0.05)->y
 
-## Dose p value<0.05 and p adjust  affect the results?
-
-identical(x,y)
-
-##[1] TRUE  -> No, the results are the same
 
 
 # Figure 6: A-C -----------------------------------------------------------
