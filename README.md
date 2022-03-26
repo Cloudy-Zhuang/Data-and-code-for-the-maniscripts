@@ -8,5 +8,5 @@ The category of this repository is as follows:
 
 
 
- Welcome to download the data and codes we provided. If you have any question while appling the data or code please feel free to contact me in github or send a email regarding your inquery to our team at lzh065@163.com. Thank you!
+ Welcome to download the data and codes we provided. If you have any question while appling the data or code please feel free to contact me on github or send a email regarding your inquery to our team at lzh065@163.com. Thank you!
 
